@@ -1,61 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Product Management API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a Laravel API-only application for managing a product catalog that supports both simple and variable products, built as a backend developer exam.
 
-## About Laravel
+The API is designed to be scalable, well-structured, and follows best practices for building robust APIs with Laravel. It includes features like dynamic filtering, optimized querying, centralized error handling, and is fully documented using Scribe.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack & Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Framework**: Laravel 11
+- **Database**: MySQL
+- **API Documentation**: [Scribe](https://scribe.knuckles.wtf/laravel) (Available at `/docs`)
+- **Key Features**:
+  - Simple & Variable Product Management
+  - Advanced, chainable filtering (name, type, price range)
+  - Optimized queries with Eager Loading to prevent N+1 issues
+  - Centralized API response and error handling
+  - Use of modern Laravel features: Enum Casting, Form Requests, API Resources
+  - Service Layer for business logic encapsulation
+  - Database seeding with realistic sample data
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Database Structure (ERD)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The database is designed to be normalized and scalable, effectively handling simple products and complex product variations with multiple attributes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+*(Here you can place the image of your ERD)*
+![Database ERD](erd.png)
 
-## Laravel Sponsors
+A brief explanation of the core tables:
+- **`products`**: Stores core product information and data for simple products.
+- **`attributes`**: Defines the types of variations available (e.g., Color, Size).
+- **`attribute_values`**: Stores the specific options for each attribute (e.g., Red, Blue; Small, Large).
+- **`product_variations`**: Represents a specific, sellable version of a variable product (e.g., "Red, Large T-Shirt"), with its own SKU, price, and stock.
+- **`attribute_value_product_variation`**: A pivot table linking a `product_variation` to its defining `attribute_values`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Getting Started
 
-## Contributing
+### 1. Prerequisites
+- PHP >= 8.2
+- Composer
+- MySQL
+- A local web server environment (e.g., Laravel Herd, Valet, Laragon)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. Installation & Setup
 
-## Code of Conduct
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/anastalal/products_api.git
+    cd products_api
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2.  **Install dependencies:**
+    ```bash
+    composer install
+    ```
 
-## Security Vulnerabilities
+3.  **Setup your environment file:**
+    Copy the `.env.example` file to a new file named `.env`.
+    ```bash
+    cp .env.example .env
+    ```
+    Update the `DB_*` variables in the `.env` file with your local database credentials.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4.  **Generate application key:**
+    ```bash
+    php artisan key:generate
+    ```
 
-## License
+5.  **Run migrations and seed the database:**
+    This command will set up the database schema and populate it with sample data.
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6.  **Serve the application:**
+    ```bash
+    php artisan serve
+    ```
+    The API will be available at `http://127.0.0.1:8000`.
+
+---
+
+## How to Test Endpoints
+
+The API is fully documented with interactive examples using **Scribe**. You can access the documentation by navigating to `/docs` in your browser:
+
+[**http://127.0.0.1:8000/docs**](http://127.0.0.1:8000/docs)
+
+Alternatively, you can use an API client like Postman or Insomnia. Below are some `cURL` examples for the main endpoints.
+
