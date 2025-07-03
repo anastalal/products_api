@@ -26,7 +26,7 @@ The API is designed to be scalable, well-structured, and follows best practices 
 
 The database is designed to be normalized and scalable, effectively handling simple products and complex product variations with multiple attributes.
 
-*(Here you can place the image of your ERD)*
+
 ![Database ERD](erd.png)
 
 A brief explanation of the core tables:
@@ -91,6 +91,8 @@ A brief explanation of the core tables:
 The API is fully documented with interactive examples using **Scribe**. You can access the documentation by navigating to `/docs` in your browser:
 
 [**http://127.0.0.1:8000/docs**](http://127.0.0.1:8000/docs)
+ 
 
-Alternatively, you can use an API client like Postman or Insomnia. Below are some `cURL` examples for the main endpoints.
+You can also use the live version to test the api endpoints 
+[**https://products.coderans.site/docs**](https://products.coderans.site/docs)
 
