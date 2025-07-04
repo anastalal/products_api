@@ -1065,7 +1065,7 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 1
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1082,7 +1082,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 12
       product: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1223,7 +1223,7 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 1
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1240,7 +1240,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 12
       product: 2
     queryParameters: []
     cleanQueryParameters: []
@@ -1301,7 +1301,7 @@ endpoints:
         name: is_featured
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1311,7 +1311,7 @@ endpoints:
         name: is_active
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1414,8 +1414,8 @@ endpoints:
       type: simple
       description: 'Consequatur quisquam recusandae asperiores accusamus nihil repellat.'
       image: wtxpeqqikymwkii
-      is_featured: false
-      is_active: false
+      is_featured: true
+      is_active: true
       price: 47
       sku: fowtzmixkolowyu
       stock_quantity: 20
@@ -1459,7 +1459,7 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 1
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1476,7 +1476,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 12
       product: 1
     queryParameters: []
     cleanQueryParameters: []

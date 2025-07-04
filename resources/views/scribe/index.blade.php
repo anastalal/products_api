@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://127.0.0.1:8000";
+        var tryItOutBaseUrl = "https://products.coderans.site";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -97,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 3, 2025</li>
+        <li>Last updated: July 4, 2025</li>
     </ul>
 </div>
 
@@ -106,7 +106,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
+    <strong>Base URL</strong>: <code>https://products.coderans.site</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -135,14 +135,14 @@ You can filter the results by name, type, and price range.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/products?name=%22Awesome+T-Shirt%22&amp;type=variable&amp;min_price=10.5&amp;max_price=99.99&amp;per_page=20" \
+    --get "https://products.coderans.site/api/products?name=%22Awesome+T-Shirt%22&amp;type=variable&amp;min_price=10.5&amp;max_price=99.99&amp;per_page=20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/products"
+    "https://products.coderans.site/api/products"
 );
 
 const params = {
@@ -944,7 +944,7 @@ For a 'variable' product, provide an array of <code>variations</code>.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/products" \
+    "https://products.coderans.site/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -967,7 +967,7 @@ For a 'variable' product, provide an array of <code>variations</code>.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/products"
+    "https://products.coderans.site/api/products"
 );
 
 const headers = {
@@ -1385,14 +1385,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/products/1" \
+    --get "https://products.coderans.site/api/products/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/products/1"
+    "https://products.coderans.site/api/products/12"
 );
 
 const headers = {
@@ -1584,10 +1584,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-products--id-"
-               value="1"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>12</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>product</code></b>&nbsp;&nbsp;
@@ -1617,7 +1617,7 @@ Any existing variations not included in the request will be deleted.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/products/1" \
+    "https://products.coderans.site/api/products/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1626,8 +1626,8 @@ Any existing variations not included in the request will be deleted.</p>
     \"type\": \"simple\",
     \"description\": \"Consequatur quisquam recusandae asperiores accusamus nihil repellat.\",
     \"image\": \"wtxpeqqikymwkii\",
-    \"is_featured\": false,
-    \"is_active\": false,
+    \"is_featured\": true,
+    \"is_active\": true,
     \"price\": 47,
     \"sku\": \"fowtzmixkolowyu\",
     \"stock_quantity\": 20,
@@ -1648,7 +1648,7 @@ Any existing variations not included in the request will be deleted.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/products/1"
+    "https://products.coderans.site/api/products/12"
 );
 
 const headers = {
@@ -1662,8 +1662,8 @@ let body = {
     "type": "simple",
     "description": "Consequatur quisquam recusandae asperiores accusamus nihil repellat.",
     "image": "wtxpeqqikymwkii",
-    "is_featured": false,
-    "is_active": false,
+    "is_featured": true,
+    "is_active": true,
     "price": 47,
     "sku": "fowtzmixkolowyu",
     "stock_quantity": 20,
@@ -1770,10 +1770,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-products--id-"
-               value="1"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>12</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>product</code></b>&nbsp;&nbsp;
@@ -1863,7 +1863,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_active</code></b>&nbsp;&nbsp;
@@ -1884,7 +1884,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -2002,14 +2002,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/products/1" \
+    "https://products.coderans.site/api/products/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/products/1"
+    "https://products.coderans.site/api/products/12"
 );
 
 const headers = {
@@ -2123,10 +2123,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-products--id-"
-               value="1"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>12</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>product</code></b>&nbsp;&nbsp;
