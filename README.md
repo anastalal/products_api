@@ -8,7 +8,7 @@ The API is designed to be scalable, well-structured, and follows best practices 
 
 ## Tech Stack & Features
 
-- **Framework**: Laravel 11
+- **Framework**: Laravel 12
 - **Database**: MySQL
 - **API Documentation**: [Scribe](https://scribe.knuckles.wtf/laravel) (Available at `/docs`)
 - **Key Features**:
@@ -96,3 +96,12 @@ The API is fully documented with interactive examples using **Scribe**. You can 
 You can also use the live version to test the api endpoints 
 [**https://products.coderans.site/docs**](https://products.coderans.site/docs)
 
+## Running Tests
+
+This project includes a comprehensive suite of feature tests to ensure the API endpoints are working correctly and reliably. The tests cover all CRUD operations for both simple and variable products.
+
+To run the entire test suite, use the following artisan command:
+
+```bash
+php artisan test --filter ProductsApiTest
+```
